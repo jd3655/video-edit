@@ -67,10 +67,7 @@ def is_mp4(path: Path) -> bool:
 
 
 def build_output_name(input_path: Path, trim_seconds: float, overwrite: bool) -> str:
-    if overwrite:
-        return input_path.name
-    suffix = f"_trim{trim_seconds:g}s"
-    return f"{input_path.stem}{suffix}{input_path.suffix}"
+    return input_path.name
 
 
 class Worker(QObject):
